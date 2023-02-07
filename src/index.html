@@ -11,7 +11,14 @@
 <body>
   <main>
     <h1>Heisenberg JavaScript App</h1>
+    <p>Loading content form the API: <b id="name">.....</b></p>
   </main>
+  <script>
+    (async function() {
+      const { text } = await(await fetch(`/api/message`)).json();
+      document.querySelector('#name').textContent = text;
+    }());
+  </script>
 </body>
 <!-- Bạn nhấn F1 (Fn + F1, Ctrl + shift + P) ==> open Command palette ;)  -->
 <!-- waitting ... -->
